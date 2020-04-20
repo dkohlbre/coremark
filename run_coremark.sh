@@ -13,6 +13,6 @@ for RUN_N in $(seq $REPS); do
         ./coremark.exe > ${BASE_LOG_FILE} 2> ${BASE_LOG_FILE}.err
     fi
     if [[ $RUN_KEYSTONE == 1 ]]; then
-        ${TEST_RUNNER} coremark.exe ${EYRIE_FULL_SUPPORT} 2048 49152 0 0 > ${KEYSTONE_LOG_FILE} 2> ${KEYSTONE_LOG_FILE}.err
+        ${TEST_RUNNER} coremark.exe ${EYRIE_FULL_SUPPORT} --utm-size 2048 --freemem-size 49152 > ${KEYSTONE_LOG_FILE} 2> ${KEYSTONE_LOG_FILE}.err
     fi
 done
